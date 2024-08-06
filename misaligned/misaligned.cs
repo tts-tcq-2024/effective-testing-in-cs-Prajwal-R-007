@@ -6,17 +6,20 @@ namespace MisalignedSpace {
         static int printColorMap() {
             string[] majorColors = {"White", "Red", "Black", "Yellow", "Violet"};
             string[] minorColors = {"Blue", "Orange", "Green", "Brown", "Slate"};
+            
             int i = 0, j = 0;
-            for(i = 0; i < 5; i++) {
-                for(j = 0; j < 5; j++) {
-                    Console.WriteLine("{0} | {1} | {2}", i * 5 + j, majorColors[i], minorColors[i]);
+            for (i = 0; i < 5; i++) {
+                for (j = 0; j < 5; j++) {
+                    Console.WriteLine("{0,2} | {1,-6} | {2,-6}", (i * 5 + j) + 1, majorColors[i], minorColors[j]);
                 }
             }
             return i * j;
         }
+
         static void Main(string[] args) {
             int result = printColorMap();
             Debug.Assert(result == 25);
+            Console.WriteLine(result);
             Console.WriteLine("All is well (maybe!)");
         }
     }
